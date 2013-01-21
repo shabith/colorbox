@@ -254,8 +254,7 @@
 			
 			if (settings.rel !== 'nofollow') {
 				$related = $('.' + boxElement).filter(function () {
-					var data = $.data(this, 
-					),
+					var data = $.data(this, colorbox),
 						relRelated;
 
 					if (data) {
