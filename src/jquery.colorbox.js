@@ -6,6 +6,7 @@
 		transition: "elastic",
 		speed: 300,
 		width: false,
+		customClass: "",
 		initialWidth: "600",
 		innerWidth: false,
 		maxWidth: false,
@@ -253,7 +254,8 @@
 			
 			if (settings.rel !== 'nofollow') {
 				$related = $('.' + boxElement).filter(function () {
-					var data = $.data(this, colorbox),
+					var data = $.data(this, 
+					),
 						relRelated;
 
 					if (data) {
@@ -316,7 +318,9 @@
 
 			$window = $(window);
 			$box = $tag(div).attr({id: colorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''}).hide();
+			$box.addClass(settings.customClass);
 			$overlay = $tag(div, "Overlay", isIE6 ? 'position:absolute' : '').hide();
+			$overlay.addClass(settings.customClass);
 			$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic"));
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
