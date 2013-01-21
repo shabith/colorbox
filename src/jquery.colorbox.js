@@ -272,6 +272,12 @@
 				}
 			}
 			
+			//custom theme
+			if(settings.customClass){
+				$box.addClass(settings.customClass);
+				$overlay.addClass(settings.customClass);
+			}
+			
 			if (!open) {
 				open = active = true; // Prevents the page-change action from queuing up if the visitor holds down the left or right keys.
 				
@@ -316,10 +322,8 @@
 			init = false;
 
 			$window = $(window);
-			$box = $tag(div).attr({id: colorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''}).hide();
-			$box.addClass(settings.customClass);
+			$box = $tag(div).attr({id: colorbox, 'class': isIE ? prefix + (isIE6 ? 'IE6' : 'IE') : ''}).hide();	
 			$overlay = $tag(div, "Overlay", isIE6 ? 'position:absolute' : '').hide();
-			$overlay.addClass(settings.customClass);
 			$loadingOverlay = $tag(div, "LoadingOverlay").add($tag(div, "LoadingGraphic"));
 			$wrap = $tag(div, "Wrapper");
 			$content = $tag(div, "Content").append(
